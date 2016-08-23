@@ -1733,7 +1733,7 @@ class PropertySpec: QuickSpec {
 					var destinationProperty: MutableProperty<String>? = MutableProperty("")
 
 					var isDisposed = false
-					let bindingDisposable = destinationProperty! <~ sourceProperty.producer.on(disposed: { isDisposed = true })
+					destinationProperty! <~ sourceProperty.producer.on(disposed: { isDisposed = true })
 					expect(isDisposed) == false
 
 					destinationProperty = nil

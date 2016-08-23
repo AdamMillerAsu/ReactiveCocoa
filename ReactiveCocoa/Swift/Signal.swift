@@ -25,7 +25,7 @@ public final class Signal<Value, Error: Swift.Error> {
 	private var generatorDisposable: Disposable?
 
 	/// The state of the signal. `nil` if the signal has terminated.
-	private let state: Atomic<SignalState<Value, Error>?>
+	fileprivate let state: Atomic<SignalState<Value, Error>?>
 
 	/// Initialize a Signal that will immediately invoke the given generator,
 	/// then forward events sent to the given observer.
